@@ -19,3 +19,14 @@ app.post("/" , function(req , res){
     var result = first+second;
     res.send("The result is: " + result);
 });
+
+app.get("/bmiCalculator" , function(req,res){
+    res.sendFile(__dirname + "/bmiCalculator.html");
+});
+
+app.post("/bmiCalculator" , function(req,res){
+    var height = Number(req.body.height);
+    var weight = Number(req.body.weight);
+    var bmi = weight/(height*height);
+    res.send("Your BMI is : " + bmi);
+})
