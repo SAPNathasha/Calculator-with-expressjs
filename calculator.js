@@ -9,6 +9,7 @@ app.listen("3000", function(){
     console.log("Starting in port 3000");
 });
 
+//plus
 app.get("/", function(req , res){
     res.sendFile(__dirname + "/index.html");
 });
@@ -20,6 +21,7 @@ app.post("/" , function(req , res){
     res.send("The result is: " + result);
 });
 
+//Bmi value
 app.get("/bmiCalculator" , function(req,res){
     res.sendFile(__dirname + "/bmiCalculator.html");
 });
@@ -30,3 +32,15 @@ app.post("/bmiCalculator" , function(req,res){
     var bmi = weight/(height*height);
     res.send("Your BMI is : " + bmi);
 })
+
+//multiply
+app.get("/multiply" , function(req,res){
+    res.sendFile(__dirname + "/multiply.html");
+});
+
+app.post("/multiply" , function(req,res){
+    var num1 = Number(req.body.number1);
+    var num2 = Number(req.body.number2);
+    var value = num1*num2;
+    res.send("Value is : " + value);
+});
