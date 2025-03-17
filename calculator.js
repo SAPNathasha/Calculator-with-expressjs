@@ -14,8 +14,8 @@ app.get("/", function(req , res){
 });
 
 app.post("/" , function(req , res){
-    var first = req.body.num1;
-    var second = req.body.num2;
+    var first = Number(req.body.n1);
+    var second = Number(req.body.n2);
     var result = first+second;
     res.send("The result is: " + result);
 });
